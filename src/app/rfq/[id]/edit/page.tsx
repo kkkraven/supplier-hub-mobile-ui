@@ -11,10 +11,10 @@ export async function generateStaticParams() {
   return [];
 }
 
-export default function RFQEdit({ params }: RFQEditProps) {
+export default function RFQEditPage() {
   return (
-    <main>
-      <RFQEditPage rfqId={params.id} />
-    </main>
+    <div>
+      <h1>RFQ Edit Page</h1>
+    </div>
   );
 }
