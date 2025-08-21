@@ -1,3 +1,10 @@
-# Cloudflare Pages redirects для Next.js
-/*    /index.html   200
+# Cloudflare Pages redirects для SPA
 /     /index.html   200
+/factories/*    /index.html   200
+/rfq/*    /index.html   200
+/categories/*    /index.html   200
+/admin/*    /index.html   200
+/auth    /index.html   200
+/catalog    /index.html   200
+/pricing    /index.html   200
+/*    /index.html   200
