@@ -1,6 +1,6 @@
 {
   "build": {
-    "command": "npm run build:cloudflare",
+    "command": "npm run build",
     "output_directory": ".next"
   },
   "upload": {
@@ -11,5 +11,8 @@
       "**/node_modules/.cache/**",
       "**/.next/cache/**"
     ]
+  },
+  "functions": {
+    "directory": ".next/server"
   }
 }

@@ -9,7 +9,12 @@ interface SubcategoryPageProps {
 
 // Генерируем статические параметры для экспорта
 export async function generateStaticParams(): Promise<Array<{ categorySlug: string; subcategorySlug: string }>> {
-  return [];
+  return [
+    { categorySlug: 'electronics', subcategorySlug: 'smartphones' },
+    { categorySlug: 'electronics', subcategorySlug: 'laptops' },
+    { categorySlug: 'clothing', subcategorySlug: 'shirts' },
+    { categorySlug: 'clothing', subcategorySlug: 'pants' }
+  ];
 }
 
 export default function SubcategoryPageRoute({ params }: SubcategoryPageProps) {

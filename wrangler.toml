@@ -10,7 +10,7 @@ name = "supplier-hub-preview"
 
 [build]
 command = "npm run build"
-pages_build_output_dir = ".next"
+pages_build_output_dir = "out"
 
 # Исключаем кэш-файлы из деплоя
 [build.upload]

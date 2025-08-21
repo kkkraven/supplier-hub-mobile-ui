@@ -8,13 +8,18 @@ interface RFQSendProps {
 
 // Генерируем статические параметры для экспорта
 export async function generateStaticParams() {
-  return [];
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' }
+  ];
 }
 
-export default function RFQSendPage() {
+export default function RFQSendPage({ params }: RFQSendProps) {
   return (
-    <div>
-      <h1>RFQ Send Page</h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Отправка RFQ #{params.id}</h1>
+      <p>Страница отправки запроса на предложение</p>
     </div>
   );
 }
