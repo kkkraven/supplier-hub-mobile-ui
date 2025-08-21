@@ -22,7 +22,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['@supabase/supabase-js', 'lucide-react'],
   },
-  webpack: (config, { isServer }) => {
+  // Отключаем кэширование webpack
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+  webpack: (config, { isServer, dev }) => {
     // Оптимизация для уменьшения размера бандла
     if (!isServer) {
       config.optimization = {
@@ -43,9 +48,23 @@ const nextConfig: NextConfig = {
             },
           },
         },
+        // Минимизация
+        minimize: true,
+        minimizer: config.optimization.minimizer,
       };
     }
+    
+    // Отключаем кэширование в production
+    if (!dev) {
+      config.cache = false;
+    }
+    
     return config;
+  },
+  // Исключаем кэш-файлы из деплоя
+  distDir: '.next',
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
   },
 };
 

@@ -45,3 +45,13 @@ next-env.d.ts
 # exported data files
 /public/exports/*.csv
 /public/exports/*.json
+
+# webpack cache files
+**/cache/
+**/*.pack
+**/webpack/cache/
+**/webpack/server-production/
+**/webpack/client-production/
+
+# Cloudflare Pages specific
+.wrangler/

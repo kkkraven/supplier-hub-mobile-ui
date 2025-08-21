@@ -9,5 +9,13 @@ name = "supplier-hub"
 name = "supplier-hub-preview"
 
 [build]
-command = "npm run build"
+command = "npm run build:cloudflare"
 pages_build_output_dir = ".next"
+
+# Исключаем кэш-файлы из деплоя
+[build.upload]
+exclude = [
+  "**/cache/**",
+  "**/*.pack",
+  "**/webpack/**"
+]

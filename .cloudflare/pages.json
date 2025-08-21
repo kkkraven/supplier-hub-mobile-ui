@@ -1,0 +1,15 @@
+{
+  "build": {
+    "command": "npm run build:cloudflare",
+    "output_directory": ".next"
+  },
+  "upload": {
+    "exclude": [
+      "**/cache/**",
+      "**/*.pack",
+      "**/webpack/**",
+      "**/node_modules/.cache/**",
+      "**/.next/cache/**"
+    ]
+  }
+}
