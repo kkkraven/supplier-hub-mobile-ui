@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowLeft, Grid, List } from 'lucide-react';
+import { ArrowLeft, Grid, List, Search } from 'lucide-react';
 import { Button } from '../ui/button';
 import { 
   Pagination, 

@@ -1,4 +1,4 @@
-import { SubcategoryPage } from '../../../../components/pages/subcategory-page';
+import { SubcategoryPage } from "../../../../components/pages/subcategory-page";
 
 interface SubcategoryPageProps {
   params: {
@@ -7,11 +7,18 @@ interface SubcategoryPageProps {
   };
 }
 
+// Генерируем статические параметры для экспорта
+export async function generateStaticParams() {
+  return [];
+}
+
 export default function SubcategoryPageRoute({ params }: SubcategoryPageProps) {
   return (
-    <SubcategoryPage 
-      categorySlug={params.categorySlug} 
-      subcategorySlug={params.subcategorySlug} 
-    />
+    <main>
+      <SubcategoryPage 
+        categorySlug={params.categorySlug} 
+        subcategorySlug={params.subcategorySlug} 
+      />
+    </main>
   );
 }

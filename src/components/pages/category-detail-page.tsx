@@ -207,7 +207,7 @@ export function CategoryDetailPage({ category, onNavigate }: CategoryDetailPageP
           employees: '100-150',
           capacity: '30,000 шт/месяц'
         }
-      ]
+      ],
         {
           id: '4',
           name: 'TechKnit Innovation',

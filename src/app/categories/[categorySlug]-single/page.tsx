@@ -1,11 +1,14 @@
-"use client";
-
 import { CategoryPage } from "../../../components/pages/category-page";
 
 interface CategoryPageProps {
   params: {
     categorySlug: string;
   };
+}
+
+// Генерируем статические параметры для экспорта
+export async function generateStaticParams() {
+  return [];
 }
 
 export default function CategoryPageRoute({ params }: CategoryPageProps) {
