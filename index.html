@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест Cloudflare Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .status {
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.2);
+            border-radius: 10px;
+            border: 2px solid #00ff00;
+        }
+        .info {
+            font-size: 1.2em;
+            margin: 15px 0;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Тест успешен!</h1>
+        <div class="status">
+            ✅ Cloudflare Pages работает!
+        </div>
+        <div class="info">
+            Этот файл находится в корне проекта
+        </div>
+        <div class="info">
+            Время: <span id="time"></span>
+        </div>
+        <div class="info">
+            URL: <span id="url"></span>
+        </div>
+    </div>
+
+    <script>
+        // Показываем текущее время
+        document.getElementById('time').textContent = new Date().toLocaleString('ru-RU');
+        
+        // Показываем текущий URL
+        document.getElementById('url').textContent = window.location.href;
+        
+        console.log('✅ Тестовая страница загружена успешно!');
+        console.log('URL:', window.location.href);
+        console.log('Время:', new Date().toLocaleString('ru-RU'));
+    </script>
+</body>
+</html>
