@@ -1,10 +1,19 @@
 "use client";
+import { Suspense } from "react";
 import { FactoryListPage } from "../../components/pages/factory-list-page";
 
-export default function Factories() {
+function FactoriesContent() {
   return (
     <main>
       <FactoryListPage />
     </main>
+  );
+}
+
+export default function Factories() {
+  return (
+    <Suspense fallback={<div>Загрузка...</div>}>
+      <FactoriesContent />
+    </Suspense>
   );
 }

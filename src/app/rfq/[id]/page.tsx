@@ -7,7 +7,7 @@ interface RFQDetailProps {
 }
 
 // Генерируем статические параметры для экспорта
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Array<{ id: string }>> {
   return [];
 }
 

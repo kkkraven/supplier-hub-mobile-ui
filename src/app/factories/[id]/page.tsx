@@ -8,15 +8,13 @@ interface FactoryDetailProps {
 
 // Генерируем статические параметры для экспорта
 export async function generateStaticParams() {
-  // Возвращаем пустой массив, так как мы не знаем все ID заранее
-  // В реальном проекте здесь можно было бы получить список всех фабрик
   return [];
 }
 
-export default function FactoryDetail({ params }: FactoryDetailProps) {
+export default function FactoryDetail() {
   return (
-    <main>
-      <FactoryDetailPage factoryId={params.id} />
-    </main>
+    <div>
+      <h1>Factory Detail Page</h1>
+    </div>
   );
 }

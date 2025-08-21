@@ -7,8 +7,9 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   },
   serverExternalPackages: ['@supabase/supabase-js'],
-  output: 'export',
-  trailingSlash: true,
+  // Временно отключаем статический экспорт для решения проблемы с деплоем
+  // output: 'export',
+  // trailingSlash: true,
   images: {
     unoptimized: true
   },

@@ -8,7 +8,7 @@ interface SubcategoryPageProps {
 }
 
 // Генерируем статические параметры для экспорта
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Array<{ categorySlug: string; subcategorySlug: string }>> {
   return [];
 }
 
