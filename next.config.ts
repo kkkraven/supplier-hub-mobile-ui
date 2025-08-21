@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   },
-  serverExternalPackages: ['@supabase/supabase-js'],
-  // Временно отключаем статический экспорт для решения проблемы с деплоем
+  // Временно отключаем статический экспорт для решения проблем
   // output: 'export',
   // trailingSlash: true,
   images: {
@@ -18,7 +17,36 @@ const nextConfig: NextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  }
+  },
+  // Оптимизации для Cloudflare Pages
+  experimental: {
+    optimizePackageImports: ['@supabase/supabase-js', 'lucide-react'],
+  },
+  webpack: (config, { isServer }) => {
+    // Оптимизация для уменьшения размера бандла
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+            },
+            supabase: {
+              test: /[\\/]node_modules[\\/]@supabase[\\/]/,
+              name: 'supabase',
+              chunks: 'all',
+              priority: 10,
+            },
+          },
+        },
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
