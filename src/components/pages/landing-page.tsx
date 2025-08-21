@@ -563,7 +563,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection animation="fade-up" className="py-20 gradient-factura-purple animate-background-gradient">
+      <AnimatedSection animation="fade-up" className="py-12 gradient-factura-purple animate-background-gradient">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <ParallaxElement speed={0.3} className="text-white">
             <AnimatedSection animation="slide-down" delay={0.2}>
@@ -604,7 +604,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       </AnimatedSection>
 
       {/* Footer */}
-      <AnimatedSection animation="fade-up" className="bg-gray-900 text-white py-16">
+      <AnimatedSection animation="fade-up" className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedList animation="slide-up" staggerDelay={0.1} className="grid md:grid-cols-4 gap-8">
             <div className="animate-fade-up">
