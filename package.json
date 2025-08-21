@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "clean": "rimraf .next node_modules/.cache",
     "clean:win": "powershell -ExecutionPolicy Bypass -File clean.ps1",
-    "build": "npm run clean && next build",
+    "build": "npm run clean && cross-env NEXT_TELEMETRY_DISABLED=1 next build",
     "build:cloudflare": "npm run clean && cross-env NEXT_TELEMETRY_DISABLED=1 next build",
     "build:win": "npm run clean:win && next build",
     "build:cloudflare:win": "npm run clean:win && cross-env NEXT_TELEMETRY_DISABLED=1 next build",
