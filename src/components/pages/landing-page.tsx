@@ -448,7 +448,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       </AnimatedSection>
 
       {/* Features Section */}
-      <AnimatedSection animation="fade-up" className="py-20 bg-white">
+      <AnimatedSection animation="fade-up" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection animation="slide-down" delay={0.2} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 animate-text-glow">
@@ -483,7 +483,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       </AnimatedSection>
 
       {/* Process Section */}
-      <AnimatedSection animation="fade-up" className="py-20 bg-gradient-to-br from-primary/5 to-accent-purple/5 animate-background-gradient">
+      <AnimatedSection animation="fade-up" className="py-16 bg-gradient-to-br from-primary/5 to-accent-purple/5 animate-background-gradient">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection animation="slide-down" delay={0.2} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 animate-text-glow">
@@ -521,7 +521,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       </AnimatedSection>
 
       {/* Testimonials Section */}
-      <AnimatedSection animation="fade-up" className="py-20 bg-white">
+      <AnimatedSection animation="fade-up" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection animation="slide-down" delay={0.2} className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 animate-text-glow">
