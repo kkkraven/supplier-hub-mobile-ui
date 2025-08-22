@@ -7,19 +7,6 @@ pages_build_output_dir = "out"
 [build]
 command = "npm run build"
 
-# Настройки для Pages
-[pages]
-build_command = "npm run build"
-output_directory = "out"
-
 # Переменные окружения (будут настроены в панели Cloudflare)
 [env.production.vars]
 NEXT_PUBLIC_APP_URL = "https://supplier-hub-mobile-ui1.pages.dev"
-
-# Исключаем ненужные файлы из деплоя
-[rules]
-"node_modules/**" = { ignore = true }
-".git/**" = { ignore = true }
-".next/**" = { ignore = true }
-"src/**" = { ignore = true }
-"*.md" = { ignore = true }
