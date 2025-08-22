@@ -1,0 +1,25 @@
+name = "supplier-hub-mobile-ui"
+compatibility_date = "2024-01-01"
+
+# Конфигурация для Cloudflare Pages
+[build]
+command = "npm run build"
+# Указываем папку 'out' для статического экспорта Next.js
+pages_build_output_dir = "out"
+
+# Настройки для Pages
+[pages]
+build_command = "npm run build"
+output_directory = "out"
+
+# Переменные окружения (будут настроены в панели Cloudflare)
+[env.production.vars]
+NEXT_PUBLIC_APP_URL = "https://supplier-hub-mobile-ui1.pages.dev"
+
+# Исключаем ненужные файлы из деплоя
+[rules]
+"node_modules/**" = { ignore = true }
+".git/**" = { ignore = true }
+".next/**" = { ignore = true }
+"src/**" = { ignore = true }
+"*.md" = { ignore = true }

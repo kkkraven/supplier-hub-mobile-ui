@@ -1,8 +1,6 @@
-# Cloudflare Pages redirects для SPA (исправлены бесконечные циклы)
-/factories/:path*    /index.html   200
-/rfq/:path*    /index.html   200  
-/categories/:path*    /index.html   200
-/admin/:path*    /index.html   200
-/auth*    /index.html   200
-/catalog*    /index.html   200
-/pricing*    /index.html   200
+# Cloudflare Pages redirects для статического Next.js экспорта
+# Для статического экспорта не нужны SPA redirects
+# Все HTML файлы уже созданы Next.js
+
+# Только fallback для несуществующих страниц
+/* /404.html 404
