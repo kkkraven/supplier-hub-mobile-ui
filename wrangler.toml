@@ -1,8 +1,5 @@
 name = "supplier-hub-mobile-ui"
 compatibility_date = "2024-01-01"
 
-# Конфигурация для Cloudflare Pages
+# Configuration for Cloudflare Pages
 pages_build_output_dir = "out"
-
-# Принудительное обновление для синхронизации с Cloudflare
-
