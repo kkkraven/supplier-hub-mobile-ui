@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "../components/navbar";
 import { AuthProvider } from "../contexts/AuthContext";
 import { Toaster } from "sonner";
+import { MobileLayout } from "../components/ui/mobile-layout";
 
 // Шрифты по брендбуку уже настроены в globals.css; удаляем Next Fonts
 
@@ -24,9 +25,9 @@ export default function RootLayout({
             currentPage={"landing"}
             showAdminButton={false}
           />
-          <div className="min-h-screen bg-gray-50">
+          <MobileLayout>
             {children}
-          </div>
+          </MobileLayout>
           <Toaster position="top-right" />
         </AuthProvider>
       </body>

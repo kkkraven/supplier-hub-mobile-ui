@@ -532,10 +532,10 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
             </p>
           </AnimatedSection>
 
-          <AnimatedList animation="rotate-in" staggerDelay={0.15} className="grid md:grid-cols-3 gap-8">
+          <AnimatedList animation="rotate-in" staggerDelay={0.15} className="grid md:grid-cols-3 gap-4">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="animate-card-hover shadow-factura hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-1">
-                <CardContent className="p-8">
+                <CardContent className="p-6">
                   <AnimatedSection animation="bounce-in" delay={0.5} className="flex items-center gap-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-warning text-warning animate-icon-pulse" />

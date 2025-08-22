@@ -1,0 +1,73 @@
+# ============================================================================
+# ENVIRONMENT VARIABLES FOR STRIPE INTEGRATION
+# ============================================================================
+# Скопируйте эти переменные в ваш .env.local файл
+# ============================================================================
+
+# ============================================================================
+# NEXT.JS CONFIGURATION
+# ============================================================================
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# ============================================================================
+# SUPABASE CONFIGURATION
+# ============================================================================
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+# ============================================================================
+# STRIPE CONFIGURATION
+# ============================================================================
+
+# Stripe API Keys (Test Mode)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
+
+# Stripe Webhook Secret
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+# ============================================================================
+# STRIPE PRICE IDS - STARTER PLAN
+# ============================================================================
+NEXT_PUBLIC_STRIPE_STARTER_MONTHLY_PRICE_ID=price_starter_monthly
+NEXT_PUBLIC_STRIPE_STARTER_ANNUAL_PRICE_ID=price_starter_annual
+
+# ============================================================================
+# STRIPE PRICE IDS - PROFESSIONAL PLAN
+# ============================================================================
+NEXT_PUBLIC_STRIPE_PROFESSIONAL_MONTHLY_PRICE_ID=price_professional_monthly
+NEXT_PUBLIC_STRIPE_PROFESSIONAL_ANNUAL_PRICE_ID=price_professional_annual
+
+# ============================================================================
+# STRIPE PRICE IDS - ENTERPRISE PLAN
+# ============================================================================
+NEXT_PUBLIC_STRIPE_ENTERPRISE_MONTHLY_PRICE_ID=price_enterprise_monthly
+NEXT_PUBLIC_STRIPE_ENTERPRISE_ANNUAL_PRICE_ID=price_enterprise_annual
+
+# ============================================================================
+# DEVELOPMENT SETTINGS
+# ============================================================================
+NODE_ENV=development
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# 
+# 1. Получение Stripe ключей:
+#    - Зайдите в https://dashboard.stripe.com/
+#    - В разделе "Developers" → "API keys"
+#    - Скопируйте Publishable key и Secret key
+#
+# 2. Создание Stripe Price IDs:
+#    - В разделе "Products" создайте продукты для каждого плана
+#    - Для каждого продукта создайте цены (monthly и annual)
+#    - Скопируйте Price IDs в соответствующие переменные
+#
+# 3. Настройка Webhook:
+#    - В разделе "Developers" → "Webhooks"
+#    - Создайте endpoint: https://yourdomain.com/api/webhooks/stripe
+#    - Выберите события (см. STRIPE_INTEGRATION_SETUP.md)
+#    - Скопируйте Webhook secret
+#
+# ============================================================================

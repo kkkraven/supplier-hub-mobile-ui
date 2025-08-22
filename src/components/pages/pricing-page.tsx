@@ -347,7 +347,7 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-4">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-white">
                 <CardContent className="p-6">

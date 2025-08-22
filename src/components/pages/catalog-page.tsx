@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Search, Filter, ArrowRight, MapPin, Star, CheckCircle } from 'lucide-react';
 import { Button } from '../ui/button';
-import { Input } from '../ui/input';
 import { Card, CardContent, CardHeader } from '../ui/card';
 import { Badge } from '../ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { MobileInput } from '../ui/mobile-forms';
+import { MobileSelect } from '../ui/mobile-forms';
+import { MobileFilters } from '../ui/mobile-filters';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
 import { useRouter } from 'next/navigation';
 
@@ -203,40 +204,39 @@ export function CatalogPage({ onNavigate }: CatalogPageProps) {
             
             {/* Search and Filters */}
             <div className="max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row gap-4 mb-8">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <Input
-                    placeholder="Поиск по названию, категории, городу..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 h-12 text-lg"
+              <div className="space-y-4 mb-8">
+                <MobileInput
+                  placeholder="Поиск по названию, категории, городу..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  leftIcon={<Search className="w-5 h-5" />}
+                  variant="search"
+                  onSearch={(value) => setSearchTerm(value)}
+                />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <MobileSelect
+                    placeholder="Все категории"
+                    options={[
+                      { value: 'all', label: 'Все категории' },
+                      { value: 'knit', label: 'Knit / Трикотаж' },
+                      { value: 'woven', label: 'Woven / Ткань' },
+                      { value: 'outerwear', label: 'Outerwear' },
+                      { value: 'denim', label: 'Denim' },
+                      { value: 'activewear', label: 'Activewear' },
+                      { value: 'accessories', label: 'Accessories' }
+                    ]}
+                    value={selectedCategory}
+                    onValueChange={setSelectedCategory}
+                  />
+                  
+                  <MobileSelect
+                    placeholder="Все города"
+                    options={cities.map(city => ({ value: city.value, label: city.label }))}
+                    value={selectedCity}
+                    onValueChange={setSelectedCity}
                   />
                 </div>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-full md:w-48 h-12">
-                    <SelectValue placeholder="Все категории" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">Все категории</SelectItem>
-                    <SelectItem value="knit">Knit / Трикотаж</SelectItem>
-                    <SelectItem value="woven">Woven / Ткань</SelectItem>
-                    <SelectItem value="outerwear">Outerwear</SelectItem>
-                    <SelectItem value="denim">Denim</SelectItem>
-                    <SelectItem value="activewear">Activewear</SelectItem>
-                    <SelectItem value="accessories">Accessories</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Select value={selectedCity} onValueChange={setSelectedCity}>
-                  <SelectTrigger className="w-full md:w-48 h-12">
-                    <SelectValue placeholder="Все города" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {cities.map(city => (
-                      <SelectItem key={city.value} value={city.value}>{city.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
               </div>
             </div>
           </div>

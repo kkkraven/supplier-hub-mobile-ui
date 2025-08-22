@@ -8,6 +8,8 @@ import { Factory, SEGMENT_LABELS, SEGMENT_COLORS, INTERACTION_LEVEL_LABELS } fro
 import { InteractionStatusBadge } from './ui/interaction-status-badge';
 import { ContactInfo } from './ui/contact-info';
 import { FactoryStats } from './ui/factory-stats';
+import { useIsMobile } from './ui/use-mobile';
+import { MobileFactoryCard } from './ui/mobile-factory-card';
 
 interface FactoryCardProps {
   factory: Factory;
@@ -24,6 +26,7 @@ export function FactoryCard({
   className,
   isPaywallActive = true
 }: FactoryCardProps) {
+  const isMobile = useIsMobile();
   const displayName = factory.legal_name_en || factory.legal_name_cn;
   const isVerified = factory.last_verified && 
     new Date(factory.last_verified) > new Date(Date.now() - 365 * 24 * 60 * 60 * 1000);
@@ -100,6 +103,19 @@ export function FactoryCard({
   const facturaRating = 4.2 + Math.random() * 0.8; // 4.2-5.0
   const completedDeals = Math.floor(Math.random() * 25) + 5; // 5-30
   const reviewCount = Math.floor(Math.random() * 50) + 10; // 10-60
+
+  // Используем мобильную версию на мобильных устройствах
+  if (isMobile) {
+    return (
+      <MobileFactoryCard
+        factory={factory}
+        onClick={onClick}
+        onChat={onChat}
+        className={className}
+        isPaywallActive={isPaywallActive}
+      />
+    );
+  }
 
   return (
     <Card
